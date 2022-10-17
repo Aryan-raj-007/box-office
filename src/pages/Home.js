@@ -10,6 +10,8 @@ const Home = () => {
     apiGet(`/search/shows?q=${input}`).then(result => {
       setResults(result);
     });
+  };
+
   const onInputChange = ev => {
     setInput(ev.target.value);
   };
@@ -22,8 +24,9 @@ const Home = () => {
 
   const renderResults = () => {
     if (results && results.length === 0) {
-      return <div>No result</div>;
+      return <div>No results</div>;
     }
+
     if (results && results.length > 0) {
       return (
         <div>
@@ -33,6 +36,7 @@ const Home = () => {
         </div>
       );
     }
+
     return null;
   };
 
